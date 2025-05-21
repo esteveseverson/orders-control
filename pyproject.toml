@@ -1,0 +1,34 @@
+[project]
+name = "orders-control"
+version = "0.1.0"
+description = "Infog2 Tecnologia Backend Test"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.16.0",
+    "fastapi[standard]>=0.115.12",
+    "sqlalchemy>=2.0.41",
+]
+
+[dependency-groups]
+dev = [
+    "ruff>=0.11.10",
+    "taskipy>=1.14.1",
+]
+
+[tool.ruff]
+line-length = 79
+extend-exclude = ['migrations']
+
+[tool.ruff.lint]
+preview = true
+select = ['I', 'F', 'E', 'W', 'PL', 'PT']
+ignore = ['PLR']
+
+[tool.ruff.format]
+preview = true
+quote-style = 'single'
+
+[tool.taskipy.tasks]
+format = 'ruff check . --fix && ruff format .'
+run = 'fastapi dev src/main.py'
