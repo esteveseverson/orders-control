@@ -15,7 +15,7 @@ from src.models.auth_model import User
 from src.settings.settings import Settings
 
 pwd_context = PasswordHash.recommended()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl='auth/token')
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='auth/')
 settings = Settings()
 
 
@@ -27,7 +27,7 @@ def verify_password(plain_password: str, hashed_password: str) -> bool:
     return pwd_context.verify(plain_password, hashed_password)
 
 
-def create_access_toekn(data: dict) -> str:
+def create_access_token(data: dict) -> str:
     to_encode = data.copy()
     expire = datetime.now(tz=ZoneInfo('UTC')) + timedelta(
         minutes=settings.ACCESS_TOKEN_EXPIRE_MINUTES

@@ -1,25 +1,6 @@
-from typing import List
-
-from pydantic import BaseModel, EmailStr
-
-from src.models.auth_model import UserProfile
+from pydantic import BaseModel
 
 
-class BaseUser(BaseModel):
-    name: str
-    email: EmailStr
-    profile: UserProfile
-
-
-class CreateUser(BaseUser):
-    password: str
-
-
-class PublicUser(BaseModel):
-    id: int
-    name: str
-    email: EmailStr
-
-
-class ListUser(BaseModel):
-    users: List[PublicUser]
+class Token(BaseModel):
+    access_token: str
+    token_type: str
