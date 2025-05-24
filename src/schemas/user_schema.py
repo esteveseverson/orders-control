@@ -8,7 +8,6 @@ from src.models.auth_model import UserProfile
 class BaseUser(BaseModel):
     name: str
     email: EmailStr
-    profile: UserProfile
 
 
 class CreateUser(BaseUser):

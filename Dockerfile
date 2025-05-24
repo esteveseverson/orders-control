@@ -10,6 +10,7 @@ RUN apt-get update && \
 WORKDIR /app
 
 # Copie arquivos do projeto
+COPY .env ./
 COPY pyproject.toml uv.lock ./
 COPY src ./src
 
