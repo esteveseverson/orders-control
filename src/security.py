@@ -15,7 +15,7 @@ from src.models.auth_model import User
 from src.settings.settings import Settings
 
 pwd_context = PasswordHash.recommended()
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl='auth/')
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl='auth/login/')
 settings = Settings()
 
 

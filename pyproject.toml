@@ -17,6 +17,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
     "ruff>=0.11.10",
     "taskipy>=1.14.1",
 ]
@@ -41,4 +42,7 @@ addopts = '-p no:warnings'
 [tool.taskipy.tasks]
 format = 'ruff check . --fix && ruff format .'
 run = 'fastapi dev src/main.py'
-test = 'pytest -s -x -cov=src -vv'
+
+pre_test = 'task format'
+test = 'pytest --cov=. -vv'
+post_test = 'coverage html'

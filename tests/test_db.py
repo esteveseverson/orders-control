@@ -4,7 +4,9 @@ from src.models.auth_model import User
 
 
 def test_create_user(session):
-    new_user = User(email='test@test', password='secret')
+    new_user = User(
+        email='test@test', password='secret', profile='normal', name='test'
+    )
     session.add(new_user)
     session.commit()
 

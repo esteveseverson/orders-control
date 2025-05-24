@@ -9,6 +9,7 @@ wheels/
 # dev tools
 .ruff*
 .pytest*
+htmlcov
 
 # Virtual environments
 .venv
