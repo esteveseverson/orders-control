@@ -8,7 +8,13 @@ class Settings(BaseSettings):
         extra='ignore',
     )
 
+    # DB
     DATABASE_URL: str
     POSTGRES_DB: str
     POSTGRES_USER: str
     POSTGRES_PASSWORD: str
+
+    # Token
+    SECRET_KEY: str
+    ALGORITHM: str
+    ACCESS_TOKEN_EXPIRE_MINUTES: int
