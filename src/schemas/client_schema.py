@@ -8,7 +8,7 @@ class BaseClient(BaseModel):
     email: EmailStr
 
 
-class CreateUser(BaseClient):
+class CreateClient(BaseClient):
     cpf: str
 
 
@@ -18,5 +18,5 @@ class PublicClient(BaseModel):
     email: EmailStr
 
 
-class ListUser(BaseModel):
-    users: List[PublicClient]
+class ListClients(BaseModel):
+    clients: List[PublicClient]
