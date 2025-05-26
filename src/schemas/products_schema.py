@@ -1,16 +1,17 @@
 from datetime import date, datetime
 from typing import List
 
+from fastapi import Form
 from pydantic import BaseModel, field_validator
 
 
-class Product(BaseModel):
+class BaseProduct(BaseModel):
     name: str
     description: str
     category: str
-    price: int
+    price: float
     barcode: str
-    quantity: str
+    quantity: int
     expiration: date
 
     @field_validator('expiration', mode='before')
@@ -23,17 +24,38 @@ class Product(BaseModel):
         except ValueError:
             raise ValueError('The data must be in the format dd/mm/yyyy')
 
+    @classmethod
+    def as_form(
+        cls,
+        name: str = Form(...),
+        description: str = Form(...),
+        category: str = Form(...),
+        price: float = Form(...),
+        barcode: str = Form(...),
+        quantity: int = Form(...),
+        expiration: str = Form(...),
+    ):
+        return cls(
+            name=name,
+            description=description,
+            category=category,
+            price=price,
+            barcode=barcode,
+            quantity=quantity,
+            expiration=expiration,
+        )
+
 
 class ProductOutput(BaseModel):
     name: str
     description: str
     category: str
-    price: int
+    price: float
     barcode: str
-    quantity: str
+    quantity: int
     expiration: date
     image: str
 
 
-class ListClients(BaseModel):
+class Listproducts(BaseModel):
     products: List[ProductOutput]
