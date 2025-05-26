@@ -9,6 +9,7 @@ from src.settings.settings import Settings
 from src.models import table_registry
 from src.models.auth_model import User
 from src.models.client_model import Client
+from src.models.products_model import Product
 
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
