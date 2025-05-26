@@ -18,3 +18,8 @@ class Settings(BaseSettings):
     SECRET_KEY: str
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
+
+    # Cloudinary
+    CLOUDINARY_CLOUD_NAME: str
+    CLOUDINARY_PUBLIC_API_KEY: str 
+    CLOUDINARY_SECRET_API_KEY: str 
