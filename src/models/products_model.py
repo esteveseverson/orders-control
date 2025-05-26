@@ -5,6 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column
 
 from . import table_registry
 
+
 @table_registry.mapped_as_dataclass
 class Product:
     __tablename__ = 'products'

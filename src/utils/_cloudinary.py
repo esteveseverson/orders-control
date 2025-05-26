@@ -2,6 +2,7 @@ import cloudinary
 
 from src.settings.settings import Settings
 
+
 def cloudinary_init():
     settings = Settings()
     CLOUDINARY_CLOUD_NAME = settings.CLOUDINARY_CLOUD_NAME

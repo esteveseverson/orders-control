@@ -21,5 +21,5 @@ class Settings(BaseSettings):
 
     # Cloudinary
     CLOUDINARY_CLOUD_NAME: str
-    CLOUDINARY_PUBLIC_API_KEY: str 
-    CLOUDINARY_SECRET_API_KEY: str 
+    CLOUDINARY_PUBLIC_API_KEY: str
+    CLOUDINARY_SECRET_API_KEY: str
