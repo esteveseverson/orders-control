@@ -47,6 +47,7 @@ class BaseProduct(BaseModel):
 
 
 class ProductOutput(BaseModel):
+    id: int
     name: str
     description: str
     category: str
@@ -57,5 +58,5 @@ class ProductOutput(BaseModel):
     image: str
 
 
-class Listproducts(BaseModel):
+class ListProducts(BaseModel):
     products: List[ProductOutput]
