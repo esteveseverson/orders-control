@@ -5,7 +5,7 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from src.settings.settings import Settings
+from src.services.settings import Settings
 from src.models import table_registry
 from src.models.auth_model import User
 from src.models.client_model import Client

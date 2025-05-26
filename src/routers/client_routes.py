@@ -5,11 +5,11 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from src.database import get_session
 from src.models.auth_model import User
 from src.models.client_model import Client
 from src.schemas.client_schema import CreateClient, ListClients, PublicClient
-from src.security import get_current_user
+from src.services.database import get_session
+from src.services.security import get_current_user
 from src.utils.cpf_validator import clean_cpf, validate_cpf
 
 router = APIRouter(prefix='/clients', tags=['Clients'])

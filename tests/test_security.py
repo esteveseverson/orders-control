@@ -3,7 +3,7 @@ from http import HTTPStatus
 
 from jwt import encode
 
-from src.settings.settings import Settings
+from src.services.settings import Settings
 
 
 def test_expired_token(client):

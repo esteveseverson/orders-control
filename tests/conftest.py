@@ -4,9 +4,9 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 from sqlalchemy.pool import StaticPool
 
-from src.database import get_session
 from src.main import app
 from src.models import table_registry
+from src.services.database import get_session
 
 
 @pytest.fixture
