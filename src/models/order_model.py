@@ -53,4 +53,4 @@ class OrderItem:
     quantity: Mapped[int] = mapped_column(nullable=False)
     unit_price: Mapped[int] = mapped_column(nullable=False)
 
-    order: Mapped['Order'] = relationship(back_populates='items')
+    order: Mapped['Order'] = relationship(back_populates='items', init=False)

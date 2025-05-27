@@ -3,7 +3,12 @@ from http import HTTPStatus
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from src.routers import auth_routes, client_routes, products_routes
+from src.routers import (
+    auth_routes,
+    client_routes,
+    orders_routes,
+    products_routes,
+)
 
 app = FastAPI()
 origins = ['*']
@@ -18,6 +23,7 @@ app.add_middleware(
 app.include_router(auth_routes.router)
 app.include_router(client_routes.router)
 app.include_router(products_routes.router)
+app.include_router(orders_routes.router)
 
 
 @app.get('/', status_code=HTTPStatus.OK)

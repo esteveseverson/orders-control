@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
@@ -11,7 +11,7 @@ class OrderItemCreate(BaseModel):
 
 
 class OrderCreate(BaseModel):
-    customer_id: int
+    client_id: int
     items: List[OrderItemCreate]
 
 
@@ -26,7 +26,7 @@ class OrderItemOutput(BaseModel):
 
 class OrderOutput(BaseModel):
     id: int
-    customer_id: int
+    client_id: int
     status: OrderStatus
     total: float
     items: List[OrderItemOutput]
@@ -37,3 +37,7 @@ class OrderOutput(BaseModel):
 
 class ListOrders(BaseModel):
     orders: List[OrderOutput]
+
+
+class OrderUpdate(BaseModel):
+    status: Optional[OrderStatus] = None
